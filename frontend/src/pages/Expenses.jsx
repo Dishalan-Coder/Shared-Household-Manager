@@ -63,7 +63,7 @@ export default function Expenses() {
     if (fileRef.current) fileRef.current.value = ''
   }
 
-  // CSV download (bills)
+  
   const downloadCSV = async () => {
     const res = await api.get('/expenses/download-csv', { responseType: 'blob' })
     const url = window.URL.createObjectURL(new Blob([res.data]))
@@ -110,7 +110,7 @@ export default function Expenses() {
         <button className="btn btn-primary">Add Expense</button>
       </form>
 
-      {/* CSV upload / download — only CSV allowed */}
+      
       <div className="card">
         <h3>Upload Bills (CSV only)</h3>
         <p className="small">

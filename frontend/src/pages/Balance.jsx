@@ -36,7 +36,7 @@ export default function Balances() {
       <div className="card">
         <h3>Suggested Settlements</h3>
         {data.settlements.length === 0 ? (
-          <p>All settled up! 🤝</p>
+          <p>All settled up! </p>
         ) : (
           <ul className="settlement-list">
             {data.settlements.map((s, i) => (

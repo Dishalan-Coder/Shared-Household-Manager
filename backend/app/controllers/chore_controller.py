@@ -45,7 +45,7 @@ async def complete_chore(chore_id):
 
     rotation = chore.get("rotation_members") or []
     if rotation:
-        # ROTATING chore → advance index, assign next member, push due date forward
+        
         idx = (chore.get("rotation_index", 0) + 1) % len(rotation)
         next_assignee = rotation[idx]
         old_due = datetime.fromisoformat(chore["due_date"])
