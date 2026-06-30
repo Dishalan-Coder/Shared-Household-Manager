@@ -1,20 +1,23 @@
 from fastapi import FastAPI
-from app.config.database import client
+from fastapi.middleware.cors import CORSMiddleware
+from .routes import auth_routes, household_routes, chore_routes, grocery_routes, expense_routes
 
-app = FastAPI()
+app = FastAPI(title="Shared-Household Manager")
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
-@app.on_event("startup")
-async def startup():
-    print("MongoDB Connected Successfully")
-
-
-@app.on_event("shutdown")
-async def shutdown():
-    client.close()
-    print("MongoDB Connection Closed")
-
+app.include_router(auth_routes.router)
+app.include_router(household_routes.router)
+app.include_router(chore_routes.router)
+app.include_router(grocery_routes.router)
+app.include_router(expense_routes.router)
 
 @app.get("/")
-async def home():
-    return {"message": "Shared Household Manager API"}
+def root():
+    return {"status": "ok", "service": "shared-household-manager"}
