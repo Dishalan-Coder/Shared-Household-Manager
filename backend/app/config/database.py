@@ -8,5 +8,3 @@ client = AsyncIOMotorClient(MONGODB_URL)
 db = client[DATABASE_NAME]
 
 
-def get_database():
-    return db
