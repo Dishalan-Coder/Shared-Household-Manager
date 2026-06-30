@@ -1,5 +1,5 @@
 # How to Run
-## 1.backend
+
 
 ### create .env file in backend folder
 
@@ -9,6 +9,7 @@ JWT_SECRET=shared-household-manager
 JWT_ALGORITHM=HS256
 JWT_EXPIRE_MINUTES=10080
 
+## 1.backend
 ```sh
 cd backend
 python -m venv venv && source venv/bin/activate
@@ -23,16 +24,20 @@ npm install
 npm run dev
 ```
 
+
+
 ##  Project Overview
 
-The **Shared Household Manager** is a full-stack web application designed to help housemates efficiently manage shared responsibilities such as chores, grocery lists, and expenses.
+The **Shared Household Manager** is a full-stack web application developed to help housemates manage shared responsibilities efficiently. It allows users to collaborate on chores, maintain a shared grocery list, and track expenses with automatic balance calculation.
+
+---
 
 ##  Objectives
 
-* Simplify household task management
-* Enable shared grocery tracking
-* Manage and split expenses fairly
-* Provide a clear financial balance view
+* Provide a centralized platform for housemates
+* Improve task and responsibility management
+* Ensure transparent expense tracking
+* Reduce conflicts through clear financial insights
 
 ---
 
@@ -40,82 +45,81 @@ The **Shared Household Manager** is a full-stack web application designed to hel
 
 ### Frontend
 
-* React.js / HTML / CSS / Tailwind CSS
+* React.js
+* Tailwind CSS
 
 ### Backend
 
-* Node.js / FastAPI (if used)
+* FastAPI (Python)
 
 ### Database
 
-* MySQL / MongoDB
+* MongoDB (with Motor for async operations)
 
 ### Other Tools
 
 * Git & GitHub
-* Postman
-* Docker (if applicable)
+* Postman (API testing)
+* Uvicorn (ASGI server)
 
 ---
 
 ##  Key Features
 
-* 👤 User Registration & Login
-* 🏠 Create / Join Household Groups
-* 📋 Chore Assignment & Tracking
-* 🛒 Shared Grocery List
-* 💰 Expense Recording
-* 📊 Balance Calculation (Who owes whom)
+*  User Authentication (Register/Login)
+*  Household Creation & Joining System
+*  Chore Assignment with Due Dates
+*  Shared Grocery List (Add / Mark Complete)
+*  Expense Tracking (Who Paid & Split Logic)
+*  Automatic Balance Calculation (Who owes whom)
 
 ---
 
 ##  System Architecture
 
-* Frontend communicates with backend via API
-* Backend handles business logic
-* Database stores users, chores, groceries, and expenses
+* **Frontend (React):** Handles UI and user interactions
+* **Backend (FastAPI):** Manages API requests and business logic
+* **Database (MongoDB):** Stores users, households, chores, groceries, and expenses
 
+The system follows a **REST API architecture**, where the frontend communicates with the backend via HTTP requests.
 
+---
 
 ##  Workflow
 
-1. User registers/logs in
-2. Creates or joins a household
-3. Adds chores and assigns members
-4. Updates grocery list collaboratively
-5. Records shared expenses
-6. System calculates balances
+1. User registers and logs into the system
+2. User creates or joins a household group
+3. Members add and assign chores
+4. Users update the shared grocery list
+5. Expenses are recorded with payer details
+6. The system calculates and displays balances
+
+
 
 
 
 ##  Challenges Faced
 
-* Managing real-time updates
-* Handling expense splitting logic
-* Authentication and authorization
-* Github workflow
-* Backend Frondend connecting
+* Handling asynchronous database operations using Motor
+* Designing accurate expense-splitting logic
+* Managing authentication and session handling
+* Ensuring proper API structure and error handling
+* Backend and Frontend connecting
+
+
 
 ##  Future Improvements
 
-* Mobile application version
-* Real-time notifications
-* AI-based expense predictions
-* Integration with payment gateways
+* Mobile application (React Native)
+* Real-time updates using WebSockets
+* Notifications for chores and payments
+* Integration with online payment systems
 
+---
 
+## Conclusion
 
-##  Conclusion
+The **Shared Household Manager** simplifies everyday household coordination by improving collaboration, transparency, and efficiency. It demonstrates strong full-stack development skills and practical problem-solving.
 
-This project demonstrates how technology can simplify everyday household management by improving collaboration, transparency, and efficiency among housemates.
+---
 
-
-
-
-
-
-## csv file format
-```
-description,amount,payer,date,split_between
-Rent,12000,disha,2024-11-01,"dishalan, adsaya, thulasi"
-```
