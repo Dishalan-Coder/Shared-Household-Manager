@@ -1,0 +1,85 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: #f5f7fa; color: #1f2937; }
+
+.app { min-height: 100vh; }
+
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 28px; background: #1e3a8a; color: #fff; box-shadow: 0 2px 8px rgba(0,0,0,.15);
+}
+.nav-brand { font-size: 18px; font-weight: 700; }
+.nav-links { display: flex; gap: 18px; align-items: center; }
+.nav-links a { color: #e0e7ff; text-decoration: none; font-size: 14px; }
+.nav-links a:hover { color: #fff; }
+.nav-user { font-size: 13px; opacity: .9; }
+.btn-link { background: none; border: none; color: #fca5a5; cursor: pointer; font-size: 14px; }
+
+.home, .auth, .page { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+.home { text-align: center; padding-top: 80px; }
+.home h1 { font-size: 36px; margin-bottom: 12px; }
+.home-actions { margin-top: 24px; display: flex; gap: 12px; justify-content: center; }
+
+.auth { max-width: 380px; }
+.auth h2, .page h2 { margin-bottom: 20px; color: #1e3a8a; }
+.auth form { display: flex; flex-direction: column; gap: 10px; }
+.auth p { margin-top: 14px; font-size: 14px; }
+
+input, select, textarea {
+  padding: 10px 12px; border: 1px solid #d1d5db; border-radius: 6px;
+  font-size: 14px; width: 100%;
+}
+input:focus, select:focus { outline: none; border-color: #1e3a8a; }
+
+.btn {
+  padding: 9px 16px; border: 1px solid #1e3a8a; background: #fff; color: #1e3a8a;
+  border-radius: 6px; cursor: pointer; font-size: 14px; text-decoration: none; display: inline-block;
+}
+.btn:hover { background: #e0e7ff; }
+.btn-primary { background: #1e3a8a; color: #fff; }
+.btn-primary:hover { background: #1e40af; }
+.btn-sm { padding: 5px 10px; font-size: 12px; border-radius: 4px; border: 1px solid #1e3a8a; background: #fff; cursor: pointer; }
+.btn-sm.danger { border-color: #dc2626; color: #dc2626; }
+
+.card {
+  background: #fff; border-radius: 8px; padding: 20px; margin: 14px 0;
+  box-shadow: 0 1px 3px rgba(0,0,0,.08); display: flex; flex-direction: column; gap: 10px;
+}
+.card.row { flex-direction: row; align-items: center; gap: 10px; }
+.card.row input { flex: 1; }
+.card h3 { color: #1e3a8a; font-size: 16px; }
+.card label { font-size: 13px; color: #374151; }
+
+.checkbox-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.checkbox { display: flex; align-items: center; gap: 6px; font-size: 14px; }
+.checkbox input { width: auto; }
+
+.stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 18px 0; }
+.stat-card { background: #fff; border-radius: 8px; padding: 18px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.stat-card h4 { font-size: 13px; color: #6b7280; font-weight: 500; }
+.stat-num { font-size: 26px; font-weight: 700; color: #1e3a8a; margin-top: 6px; }
+
+.table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.table th, .table td { padding: 10px; text-align: left; border-bottom: 1px solid #e5e7eb; font-size: 14px; }
+.table th { color: #6b7280; font-weight: 600; font-size: 12px; text-transform: uppercase; }
+.pos { color: #059669; font-weight: 600; }
+.neg { color: #dc2626; font-weight: 600; }
+
+.chore-list, .grocery-list, .member-list, .settlement-list { list-style: none; }
+.chore-list li, .grocery-list li {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 0; border-bottom: 1px solid #f3f4f6;
+}
+.chore-list li.done { opacity: .5; text-decoration: line-through; }
+.actions { display: flex; gap: 6px; }
+
+.badge { display: inline-block; background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 12px; font-size: 11px; margin-left: 6px; }
+.badge.done-badge { background: #d1fae5; color: #065f46; }
+
+.qty { font-weight: 700; color: #1e3a8a; margin-right: 4px; }
+.settlement-list li { padding: 10px 0; border-bottom: 1px solid #f3f4f6; font-size: 15px; }
+.settlement-list .amt { color: #dc2626; font-weight: 700; }
+
+.error { background: #fee2e2; color: #991b1b; padding: 10px; border-radius: 6px; margin-bottom: 10px; font-size: 14px; }
+.info  { background: #dbeafe; color: #1e3a8a; padding: 10px; border-radius: 6px; margin-top: 8px; font-size: 14px; }
+.small { font-size: 12px; color: #6b7280; }
+.loading { padding: 60px; text-align: center; color: #6b7280; }
