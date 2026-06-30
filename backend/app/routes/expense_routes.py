@@ -31,7 +31,11 @@ async def delete_expense(expense_id: str, user=Depends(get_current_user)):
     await expense_controller.delete_expense(expense_id)
     return {"ok": True}
 
+<<<<<<< HEAD
 # ---------- CSV upload (bills) ----------
+=======
+
+>>>>>>> 336a4142295721689e63031816a7c5e7a1677629
 @router.post("/upload-csv")
 async def upload_expenses_csv(file: UploadFile = File(...), user=Depends(get_current_user)):
     if not user.get("household_id"):
@@ -42,7 +46,11 @@ async def upload_expenses_csv(file: UploadFile = File(...), user=Depends(get_cur
     added = await expense_controller.bulk_add_expenses(user["household_id"], rows, member_map)
     return {"added": added, "total_in_file": len(rows)}
 
+<<<<<<< HEAD
 # ---------- CSV download (bills) ----------
+=======
+
+>>>>>>> 336a4142295721689e63031816a7c5e7a1677629
 @router.get("/download-csv")
 async def download_expenses_csv(user=Depends(get_current_user)):
     if not user.get("household_id"):
@@ -55,7 +63,11 @@ async def download_expenses_csv(user=Depends(get_current_user)):
         headers={"Content-Disposition": "attachment; filename=bills.csv"}
     )
 
+<<<<<<< HEAD
 # ---------- Balances ----------
+=======
+
+>>>>>>> 336a4142295721689e63031816a7c5e7a1677629
 @router.get("/balances")
 async def get_balances(user=Depends(get_current_user)):
     if not user.get("household_id"):
