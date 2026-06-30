@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="nav-brand">🏠 Household Manager</div>
+      <div className="nav-brand"> Household Manager</div>
       {user && (
         <div className="nav-links">
           <Link to="/dashboard">Dashboard</Link>

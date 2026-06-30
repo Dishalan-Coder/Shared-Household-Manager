@@ -1,10 +1,4 @@
-"""
-Core balance engine:
-  1. Iterate all expenses in a household.
-  2. For each expense: payer paid `amount`; everyone in split_between owes `amount / N`.
-  3. Net balance per member = total_paid - total_owed.
-  4. Greedy settlement: pair largest debtor with largest creditor until settled.
-"""
+
 from bson import ObjectId
 from ..database import expenses_collection, households_collection, users_collection
 
@@ -46,7 +40,7 @@ async def compute_balances(household_id: str):
         m["paid"]  = round(m["paid"], 2)
         m["owed"]  = round(m["owed"], 2)
 
-    # ---- Greedy simplification of debts ----
+    
     balances = [dict(m) for m in members.values()]
     debtors   = sorted([m for m in balances if m["net"] < 0], key=lambda x: x["net"])
     creditors = sorted([m for m in balances if m["net"] > 0], key=lambda x: x["net"], reverse=True)
