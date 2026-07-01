@@ -19,7 +19,7 @@ async def calculate_balance(household_id: str):
 
         share = amount / len(participants)
 
-        # credit paid_by
+        
         balance[paid_by] = balance.get(paid_by, 0) + (amount - share)
 
         for p in participants:
