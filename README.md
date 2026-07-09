@@ -14,7 +14,7 @@ JWT_EXPIRE_MINUTES=10080
 cd backend
 python -m venv venv && source venv/bin/activate
 pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8000
+uvicorn app.main:app --reload --reload-dir app
 ```
 
 ## 2.frontend
